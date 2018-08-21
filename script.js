@@ -12,14 +12,15 @@ var mainList = {
 		for (var i = 0; i < 3; i++) {
 			var a = prompt("Какой тип товаров будем продавать?");
 			
-			if ((typeof(a)) === 'string' && (typeof(a)) === null && a != '' && a.length < 50) {
+			if ((typeof(a)) === 'string' && (typeof(a)) !== null && a != '' && a.length < 50) {
 				console.log('Все верно!');
-				
-			} else if(a === '') {
-				alert("Введите товар!");
-				var a = prompt("Какой тип товаров будем продавать?");
+				mainList.shopGoods[i] = a;
+			} else {
+				alert("Товар введите!");
+				console.log('Была ошибка');
+				i--;
 				}
-			mainList.shopGoods[i] = a;
+			
 	}
 
 // Второй способ
